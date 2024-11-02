@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message CommandRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message CommandReply {
+  string command = 1;
+  string message = 2;
+}
+
+service CommandService {
+  rpc Send (CommandRequest) returns (CommandReply) {}
+}
